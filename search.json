@@ -56,25 +56,25 @@
     "text": "Historical and societal analysis adapted from How Music Genres Reflect Societal Changes Throughout History (Fabulist), examining music as a cultural barometer for political movements, economic conditions, technological revolutions, and demographic shifts."
   },
   {
-    "objectID": "exploration.html#historical-era-societal-dynamics-heatmap",
-    "href": "exploration.html#historical-era-societal-dynamics-heatmap",
+    "objectID": "exploration.html#historical-era-genre-distribution",
+    "href": "exploration.html#historical-era-genre-distribution",
     "title": "Genres & Societal Changes",
-    "section": "1. Historical Era & Societal Dynamics Heatmap",
-    "text": "1. Historical Era & Societal Dynamics Heatmap\nSee which musical genres correlated most strongly with each historical era. Deeper blue tiles indicate higher genre dominance. Hover over any tile to see the societal dynamic shaping that period."
+    "section": "1. Historical Era Genre Distribution",
+    "text": "1. Historical Era Genre Distribution\nComparing genre market share across each historical era. Segments show the percentage each genre contributed to that era’s Billboard Top 100 hits."
   },
   {
-    "objectID": "exploration.html#societal-technological-drivers-scatterplot",
-    "href": "exploration.html#societal-technological-drivers-scatterplot",
+    "objectID": "exploration.html#historical-milestone-impact-scatterplot",
+    "href": "exploration.html#historical-milestone-impact-scatterplot",
     "title": "Genres & Societal Changes",
-    "section": "2. Societal & Technological Drivers Scatterplot",
-    "text": "2. Societal & Technological Drivers Scatterplot\nEach point measures how a specific societal movement, economic condition, or technological revolution documented by Fabulist shifted genre market shares (+/– percentage points). Bubble size reflects shift magnitude. Points above zero indicate genres that surged; points below show those that declined."
+    "section": "2. Historical Milestone Impact Scatterplot",
+    "text": "2. Historical Milestone Impact Scatterplot\nEach point plots the immediate market share shift (+/– percentage points) caused by a major historical event. Points in the upper half (above 0%) gained popularity; points in the lower half declined. Labels show the impacted genre and percentage change."
   },
   {
-    "objectID": "exploration.html#continuous-trajectory-with-societal-turning-points-1958-2024",
-    "href": "exploration.html#continuous-trajectory-with-societal-turning-points-1958-2024",
+    "objectID": "exploration.html#historical-events-data-genre-trajectory-1958-2024",
+    "href": "exploration.html#historical-events-data-genre-trajectory-1958-2024",
     "title": "Genres & Societal Changes",
-    "section": "3. Continuous Trajectory with Societal Turning Points (1958 – 2024)",
-    "text": "3. Continuous Trajectory with Societal Turning Points (1958 – 2024)\nTrack how major societal movements and technological disruptions shifted genre dominance across 66 years of Billboard chart history."
+    "section": "3. Historical Events Data & Genre Trajectory (1958 – 2024)",
+    "text": "3. Historical Events Data & Genre Trajectory (1958 – 2024)\nDiamond data markers plot actual Billboard historical event data points directly on each genre’s timeline. Hover over any diamond to see the event metrics, societal movement, and iconic Billboard hit song from that year."
   },
   {
     "objectID": "project.html",
