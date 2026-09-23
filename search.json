@@ -56,11 +56,11 @@
     "text": "Historical and societal analysis adapted from Impact of Historical Events on Music (StudyGuides / MUSC 126A Honors: Music in History and Culture), exploring how wars, civil rights movements, revolutions, and digital technology have actively shaped popular music genres throughout history."
   },
   {
-    "objectID": "exploration.html#historical-era-genre-distribution",
-    "href": "exploration.html#historical-era-genre-distribution",
+    "objectID": "exploration.html#historical-era-genre-profiles-radar-chart",
+    "href": "exploration.html#historical-era-genre-profiles-radar-chart",
     "title": "Genres & Societal Changes",
-    "section": "1. Historical Era Genre Distribution",
-    "text": "1. Historical Era Genre Distribution\nComparing genre market share across the major historical epochs identified in the StudyGuides curriculum. Segments show the percentage each genre contributed to that era’s Billboard Top 100 hits."
+    "section": "1. Historical Era Genre Profiles (Radar Chart)",
+    "text": "1. Historical Era Genre Profiles (Radar Chart)\nA radar chart comparing musical genres across historical eras. Each polygon represents an era; click legend items to isolate or compare specific periods."
   },
   {
     "objectID": "exploration.html#historical-event-impact-market-share-shifts",
@@ -70,11 +70,11 @@
     "text": "2. Historical Event Impact: Market Share Shifts\nMeasuring the net percentage-point shift in genre market shares immediately following major historical events (comparing the 2-year post-event window to the 2-year pre-event baseline). Bars extending right show market share gains; bars extending left show declines."
   },
   {
-    "objectID": "exploration.html#historical-events-data-genre-trajectory-1958-2024",
-    "href": "exploration.html#historical-events-data-genre-trajectory-1958-2024",
+    "objectID": "exploration.html#individual-genre-trajectories-historical-milestones-1958-2024",
+    "href": "exploration.html#individual-genre-trajectories-historical-milestones-1958-2024",
     "title": "Genres & Societal Changes",
-    "section": "3. Historical Events Data & Genre Trajectory (1958 – 2024)",
-    "text": "3. Historical Events Data & Genre Trajectory (1958 – 2024)\nDiamond markers plot actual Billboard historical event data points directly on each genre’s timeline. Hover over any diamond to see the event metrics, curriculum movement from StudyGuides, and iconic Billboard hit song from that year."
+    "section": "3. Individual Genre Trajectories & Historical Milestones (1958 – 2024)",
+    "text": "3. Individual Genre Trajectories & Historical Milestones (1958 – 2024)\nEach genre displayed in its own panel to reveal its rise and fall over time without overlapping lines. Diamond markers pinpoint key historical events from the StudyGuides curriculum that directly influenced that genre’s trajectory."
   },
   {
     "objectID": "project.html",
