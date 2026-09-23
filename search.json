@@ -63,11 +63,11 @@
     "text": "1. Historical Era Genre Distribution\nComparing genre market share across the major historical epochs identified in the StudyGuides curriculum. Segments show the percentage each genre contributed to that era’s Billboard Top 100 hits."
   },
   {
-    "objectID": "exploration.html#historical-event-impact-scatterplot-pre--vs.-post-event-market-share",
-    "href": "exploration.html#historical-event-impact-scatterplot-pre--vs.-post-event-market-share",
+    "objectID": "exploration.html#historical-event-impact-market-share-shifts",
+    "href": "exploration.html#historical-event-impact-market-share-shifts",
     "title": "Genres & Societal Changes",
-    "section": "2. Historical Event Impact Scatterplot (Pre- vs. Post-Event Market Share)",
-    "text": "2. Historical Event Impact Scatterplot (Pre- vs. Post-Event Market Share)\nA statistical scatterplot measuring genre market shares immediately before versus after major historical events from the StudyGuides curriculum. Points above the diagonal dashed line (\\(y = x\\)) gained market share; points below the line declined. The dashed trendline shows the overall positive correlation (\\(r = 0.81\\))."
+    "section": "2. Historical Event Impact: Market Share Shifts",
+    "text": "2. Historical Event Impact: Market Share Shifts\nMeasuring the net percentage-point shift in genre market shares immediately following major historical events (comparing the 2-year post-event window to the 2-year pre-event baseline). Bars extending right show market share gains; bars extending left show declines."
   },
   {
     "objectID": "exploration.html#historical-events-data-genre-trajectory-1958-2024",
