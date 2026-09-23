@@ -53,28 +53,28 @@
     "href": "exploration.html",
     "title": "Genres & Societal Changes",
     "section": "",
-    "text": "Historical and societal analysis adapted from How Music Genres Reflect Societal Changes Throughout History (Fabulist), examining music as a cultural barometer for political movements, economic conditions, technological revolutions, and demographic shifts."
+    "text": "Historical and societal analysis adapted from Impact of Historical Events on Music (StudyGuides / MUSC 126A Honors: Music in History and Culture), exploring how wars, civil rights movements, revolutions, and digital technology have actively shaped popular music genres throughout history."
   },
   {
     "objectID": "exploration.html#historical-era-genre-distribution",
     "href": "exploration.html#historical-era-genre-distribution",
     "title": "Genres & Societal Changes",
     "section": "1. Historical Era Genre Distribution",
-    "text": "1. Historical Era Genre Distribution\nComparing genre market share across each historical era. Segments show the percentage each genre contributed to that era’s Billboard Top 100 hits."
+    "text": "1. Historical Era Genre Distribution\nComparing genre market share across the major historical epochs identified in the StudyGuides curriculum. Segments show the percentage each genre contributed to that era’s Billboard Top 100 hits."
   },
   {
-    "objectID": "exploration.html#historical-milestone-impact-scatterplot",
-    "href": "exploration.html#historical-milestone-impact-scatterplot",
+    "objectID": "exploration.html#historical-event-impact-scatterplot-pre--vs.-post-event-market-share",
+    "href": "exploration.html#historical-event-impact-scatterplot-pre--vs.-post-event-market-share",
     "title": "Genres & Societal Changes",
-    "section": "2. Historical Milestone Impact Scatterplot",
-    "text": "2. Historical Milestone Impact Scatterplot\nEach point plots the immediate market share shift (+/– percentage points) caused by a major historical event. Points in the upper half (above 0%) gained popularity; points in the lower half declined. Labels show the impacted genre and percentage change."
+    "section": "2. Historical Event Impact Scatterplot (Pre- vs. Post-Event Market Share)",
+    "text": "2. Historical Event Impact Scatterplot (Pre- vs. Post-Event Market Share)\nA statistical scatterplot measuring genre market shares immediately before versus after major historical events from the StudyGuides curriculum. Points above the diagonal dashed line (\\(y = x\\)) gained market share; points below the line declined. The dashed trendline shows the overall positive correlation (\\(r = 0.81\\))."
   },
   {
     "objectID": "exploration.html#historical-events-data-genre-trajectory-1958-2024",
     "href": "exploration.html#historical-events-data-genre-trajectory-1958-2024",
     "title": "Genres & Societal Changes",
     "section": "3. Historical Events Data & Genre Trajectory (1958 – 2024)",
-    "text": "3. Historical Events Data & Genre Trajectory (1958 – 2024)\nDiamond data markers plot actual Billboard historical event data points directly on each genre’s timeline. Hover over any diamond to see the event metrics, societal movement, and iconic Billboard hit song from that year."
+    "text": "3. Historical Events Data & Genre Trajectory (1958 – 2024)\nDiamond markers plot actual Billboard historical event data points directly on each genre’s timeline. Hover over any diamond to see the event metrics, curriculum movement from StudyGuides, and iconic Billboard hit song from that year."
   },
   {
     "objectID": "project.html",
