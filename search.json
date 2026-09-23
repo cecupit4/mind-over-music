@@ -28,6 +28,48 @@
     "text": "Every Single Hit Song (1958 – 2024)\nExplore all 6,700 year-end hits across chart history. Hover over any point to see the song title, artist, year-end rank, and peak chart position."
   },
   {
+    "objectID": "story.html",
+    "href": "story.html",
+    "title": "Music Mapped: Regional Sounds Across America",
+    "section": "",
+    "text": "Music in America has always had a sense of place. Long before streaming and algorithms put every song in everyone’s pocket, where you lived shaped what came out of your speakers. Detroit ran on Motown soul, Austin and Nashville lived on country storytelling, California was soundtracked by surf and psychedelic rock, and New York block parties gave birth to hip-hop.\nHit the decade buttons below to see how America’s regional tastes shifted over the last 60 years. Click on any state to see its most popular sound, signature artists, and the local music scene that defined it.\n\n\n\n\n\n\nNote\n\n\n\nGenre Color Guide: ■ Rock  |  ■ Pop  |  ■ Hip-Hop/Rap  |  ■ R&B/Soul  |  ■ Country  |  ■ Electronic/Dance\n\n\n\n\n\n\n\n\n\n\n💡 Click any state on the map above to view its hometown heroes and musical history."
+  },
+  {
+    "objectID": "story.html#where-music-lives-a-state-by-state-tour",
+    "href": "story.html#where-music-lives-a-state-by-state-tour",
+    "title": "Music Mapped: Regional Sounds Across America",
+    "section": "",
+    "text": "Music in America has always had a sense of place. Long before streaming and algorithms put every song in everyone’s pocket, where you lived shaped what came out of your speakers. Detroit ran on Motown soul, Austin and Nashville lived on country storytelling, California was soundtracked by surf and psychedelic rock, and New York block parties gave birth to hip-hop.\nHit the decade buttons below to see how America’s regional tastes shifted over the last 60 years. Click on any state to see its most popular sound, signature artists, and the local music scene that defined it.\n\n\n\n\n\n\nNote\n\n\n\nGenre Color Guide: ■ Rock  |  ■ Pop  |  ■ Hip-Hop/Rap  |  ■ R&B/Soul  |  ■ Country  |  ■ Electronic/Dance\n\n\n\n\n\n\n\n\n\n\n💡 Click any state on the map above to view its hometown heroes and musical history."
+  },
+  {
+    "objectID": "story.html#how-americas-soundtrack-moved-across-decades",
+    "href": "story.html#how-americas-soundtrack-moved-across-decades",
+    "title": "Music Mapped: Regional Sounds Across America",
+    "section": "How America’s Soundtrack Moved Across Decades",
+    "text": "How America’s Soundtrack Moved Across Decades\n\n\n📻 The 60s & 70s: When Cities Built the Sounds\nCalifornia owned youth culture with sunny surf rock and Laurel Canyon counterculture, while Berry Gordy’s Motown headquarters in Detroit churned out timeless soul with Stevie Wonder and The Supremes. Down South, Nashville and Texas dug deep into honky-tonk and outlaw country with Johnny Cash and Willie Nelson.\n\n\n📺 The 80s & 90s: From NYC Block Parties to Seattle Basements\nIn the 1980s, New York City park jams and turntables ignited the golden era of hip-hop. Fast forward to the 1990s, and the rainy Pacific Northwest caught fire when Nirvana, Pearl Jam, and Soundgarden pushed raw grunge out of local clubs and onto MTV, changing rock forever.\n\n\n💿 The 2000s & 2010s: The South Takes the Crown\nAtlanta became the undisputed heavyweight of American music. Between Outkast, Ludacris, and later Future and Migos, southern trap and melodic rap became the dominant sound on car stereos and headphones across the country. Meanwhile, stadium country expanded far outside the South into heartland arenas.\n\n\n📱 The 2020s: Viral Waves and Big Comebacks\nToday, anyone with a phone and a catchy chorus can blow up nationwide overnight. But regional pride is still huge: country stars like Morgan Wallen and Zach Bryan are breaking all-time streaming records, while pop superstars like Taylor Swift sell out stadiums from coast to coast."
+  },
+  {
+    "objectID": "exploration.html",
+    "href": "exploration.html",
+    "title": "Genre Influences & Lineage",
+    "section": "",
+    "text": "No genre was born in a vacuum. Every sound on the Billboard Hot 100 is the product of artists borrowing, remixing, and expanding on the genres that came before them.\nThe interactive flow diagram below traces the musical lineage of American popular music—flowing from Foundational Roots on the left (Blues, Gospel, Folk, Funk), through Key Breakthrough Movements in the middle (Motown, Classic Rock, Golden Age Hip-Hop), into the 6 Modern Billboard Genres on the right.\n\nHover over any stream to see how one genre influenced the next and which pioneers bridged the gap.\nHover over any node to see its total influence flow.\nClick and drag any node up or down to rearrange the layout and follow specific paths.\n\n\n\nWarning: Specifying width/height in layout() is now deprecated.\nPlease specify in ggplotly() or plot_ly()\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n💡 Tip: Click and drag any node up or down to customize the diagram layout. Hover over any connector stream to read how musical ideas, instruments, and production styles flowed from one genre into another!"
+  },
+  {
+    "objectID": "exploration.html#the-musical-family-tree-how-genres-influenced-each-other",
+    "href": "exploration.html#the-musical-family-tree-how-genres-influenced-each-other",
+    "title": "Genre Influences & Lineage",
+    "section": "",
+    "text": "No genre was born in a vacuum. Every sound on the Billboard Hot 100 is the product of artists borrowing, remixing, and expanding on the genres that came before them.\nThe interactive flow diagram below traces the musical lineage of American popular music—flowing from Foundational Roots on the left (Blues, Gospel, Folk, Funk), through Key Breakthrough Movements in the middle (Motown, Classic Rock, Golden Age Hip-Hop), into the 6 Modern Billboard Genres on the right.\n\nHover over any stream to see how one genre influenced the next and which pioneers bridged the gap.\nHover over any node to see its total influence flow.\nClick and drag any node up or down to rearrange the layout and follow specific paths.\n\n\n\nWarning: Specifying width/height in layout() is now deprecated.\nPlease specify in ggplotly() or plot_ly()\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n💡 Tip: Click and drag any node up or down to customize the diagram layout. Hover over any connector stream to read how musical ideas, instruments, and production styles flowed from one genre into another!"
+  },
+  {
+    "objectID": "exploration.html#the-dna-of-americas-6-billboard-super-genres",
+    "href": "exploration.html#the-dna-of-americas-6-billboard-super-genres",
+    "title": "Genre Influences & Lineage",
+    "section": "The DNA of America’s 6 Billboard Super-Genres",
+    "text": "The DNA of America’s 6 Billboard Super-Genres\n\n\n💖 Pop (1,700 Hits)\n\nPrimary Influences: Dance-pop, Motown melodies, Hip-Hop beats, and Rock hooks.\nThe Story: Pop is a musical sponge. Rather than existing in isolation, pop takes the catchiest elements of whatever genres are currently popular—from 80s disco synths to 2010s EDM drops and rap verses.\n\n\n\n🎸 Rock (1,646 Hits)\n\nPrimary Influences: Delta Blues, Early Rock & Roll, and Appalachian Folk.\nThe Story: Electrifying the acoustic blues and 12-bar chord progressions of the 1940s created the guitar-driven sound that dominated the Billboard Hot 100 for four straight decades.\n\n\n\n🎤 Hip-Hop/Rap (1,172 Hits)\n\nPrimary Influences: 70s Funk drum breaks, Disco basslines, and spoken-word storytelling.\nThe Story: Born on Bronx park turntables by isolating funk drum breaks, hip-hop evolved through 90s lyricism to become the single most dominant streaming genre today.\n\n\n\n💜 R&B/Soul (917 Hits)\n\nPrimary Influences: Church Gospel vocal arrangements, Delta Blues, and Motown harmony.\nThe Story: Soul and R&B translated the raw passion and call-and-response of gospel music into secular chart hits, pioneering the vocal acrobatics heard across modern pop and soul.\n\n\n\n🤠 Country (597 Hits)\n\nPrimary Influences: Appalachian Folk, Bluegrass, Western Swing, and Honky-Tonk.\nThe Story: Rooted in acoustic balladry and storytelling, country expanded from regional radio barn dances into stadium-filling crossover hits with rock guitars and pop hooks.\n\n\n\n⚡ Electronic/Dance (668 Hits)\n\nPrimary Influences: German synthesizers (Kraftwerk), 70s Disco, Chicago House, and Detroit Techno.\nThe Story: Electronic music swapped acoustic drums and guitars for synthesizers and sequencers, moving from underground clubs into global festival anthems."
+  },
+  {
     "objectID": "project.html",
     "href": "project.html",
     "title": "Explore the Data",
