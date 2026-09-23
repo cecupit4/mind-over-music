@@ -63,11 +63,11 @@
     "text": "See which musical genres correlated most strongly with each historical era. Deeper blue tiles indicate higher genre dominance."
   },
   {
-    "objectID": "exploration.html#immediate-event-impact-genre-market-shifts",
-    "href": "exploration.html#immediate-event-impact-genre-market-shifts",
+    "objectID": "exploration.html#historical-event-impact-scatterplot",
+    "href": "exploration.html#historical-event-impact-scatterplot",
     "title": "Genres & Historical Events",
-    "section": "2. Immediate Event Impact: Genre Market Shifts",
-    "text": "2. Immediate Event Impact: Genre Market Shifts\nThis diverging chart displays the immediate percentage shift (gain or loss in market share) for major genres right after watershed historical events."
+    "section": "2. Historical Event Impact Scatterplot",
+    "text": "2. Historical Event Impact Scatterplot\nEach point plots a genre’s market share shift (+/– percentage points) across 18 major historical events from 1960 to 2023. Points above the dashed line gained popularity following the event; points below declined. Bubble size indicates the magnitude of the shift."
   },
   {
     "objectID": "exploration.html#continuous-trajectory-with-historical-milestones-1958-2024",
