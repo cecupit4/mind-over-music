@@ -53,21 +53,28 @@
     "href": "exploration.html",
     "title": "Genres & Historical Events",
     "section": "",
-    "text": "Popular music does not evolve in a vacuum. It reflects political movements, economic conditions, and technological revolutions. Below, we compare the top genres from the beginning and median years of each decade (1960 through 2020) and examine the historical events that influenced those sounds."
+    "text": "See which musical genres correlated most strongly with each historical era. Deeper blue tiles indicate higher genre dominance."
   },
   {
-    "objectID": "exploration.html#milestone-comparison-decade-starts-vs.-mid-decades",
-    "href": "exploration.html#milestone-comparison-decade-starts-vs.-mid-decades",
+    "objectID": "exploration.html#historical-era-correlation-heatmap",
+    "href": "exploration.html#historical-era-correlation-heatmap",
     "title": "Genres & Historical Events",
-    "section": "Milestone Comparison: Decade Starts vs. Mid-Decades",
-    "text": "Milestone Comparison: Decade Starts vs. Mid-Decades\nThis chart compares genre share across the start (e.g., 1960, 1970) and middle (e.g., 1965, 1975) of each decade from 1960 to 2020. Hover over any bar segment to see the milestone year, the historical event shaping music at that time, genre hit count, and the highest-charting song that year."
+    "section": "",
+    "text": "See which musical genres correlated most strongly with each historical era. Deeper blue tiles indicate higher genre dominance."
   },
   {
-    "objectID": "exploration.html#genre-trajectories-with-historical-milestones-1958-2024",
-    "href": "exploration.html#genre-trajectories-with-historical-milestones-1958-2024",
+    "objectID": "exploration.html#immediate-event-impact-genre-market-shifts",
+    "href": "exploration.html#immediate-event-impact-genre-market-shifts",
     "title": "Genres & Historical Events",
-    "section": "Genre Trajectories with Historical Milestones (1958 – 2024)",
-    "text": "Genre Trajectories with Historical Milestones (1958 – 2024)\nTrack how major historical events shifted genre dominance across 66 years of Billboard chart history."
+    "section": "2. Immediate Event Impact: Genre Market Shifts",
+    "text": "2. Immediate Event Impact: Genre Market Shifts\nThis diverging chart displays the immediate percentage shift (gain or loss in market share) for major genres right after watershed historical events."
+  },
+  {
+    "objectID": "exploration.html#continuous-trajectory-with-historical-milestones-1958-2024",
+    "href": "exploration.html#continuous-trajectory-with-historical-milestones-1958-2024",
+    "title": "Genres & Historical Events",
+    "section": "3. Continuous Trajectory with Historical Milestones (1958 – 2024)",
+    "text": "3. Continuous Trajectory with Historical Milestones (1958 – 2024)\nTrack how major historical events shifted genre dominance across 66 years of Billboard chart history."
   },
   {
     "objectID": "project.html",
