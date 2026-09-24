@@ -7,6 +7,13 @@
     "text": "Popular music offers a lens into cultural moments, social shifts, and technological revolutions. By tracking which genres dominated the Billboard charts over seven decades, we can see how American musical tastes have transformed over time."
   },
   {
+    "objectID": "index.html#every-single-hit-song-1958-2024",
+    "href": "index.html#every-single-hit-song-1958-2024",
+    "title": "What does music say about the world?",
+    "section": "Every Single Hit Song (1958 – 2024)",
+    "text": "Every Single Hit Song (1958 – 2024)\nExplore all 6,700 year-end hits across chart history. Hover over any point to see the song title, artist, year-end rank, and peak chart position."
+  },
+  {
     "objectID": "index.html#billboard-greatest-of-all-time-genre-breakdown",
     "href": "index.html#billboard-greatest-of-all-time-genre-breakdown",
     "title": "What does music say about the world?",
@@ -19,13 +26,6 @@
     "title": "What does music say about the world?",
     "section": "Genre Evolution: Annual Billboard Top 100 (1958 – 2024)",
     "text": "Genre Evolution: Annual Billboard Top 100 (1958 – 2024)"
-  },
-  {
-    "objectID": "index.html#every-single-hit-song-1958-2024",
-    "href": "index.html#every-single-hit-song-1958-2024",
-    "title": "What does music say about the world?",
-    "section": "Every Single Hit Song (1958 – 2024)",
-    "text": "Every Single Hit Song (1958 – 2024)\nExplore all 6,700 year-end hits across chart history. Hover over any point to see the song title, artist, year-end rank, and peak chart position."
   },
   {
     "objectID": "story.html",
@@ -56,11 +56,11 @@
     "text": "Historical and societal analysis adapted from Impact of Historical Events on Music (StudyGuides / MUSC 126A Honors: Music in History and Culture), exploring how wars, civil rights movements, revolutions, and digital technology have actively shaped popular music genres throughout history."
   },
   {
-    "objectID": "exploration.html#historical-era-genre-profiles-radar-chart",
-    "href": "exploration.html#historical-era-genre-profiles-radar-chart",
+    "objectID": "exploration.html#historical-era-genre-profiles-heatmap-matrix",
+    "href": "exploration.html#historical-era-genre-profiles-heatmap-matrix",
     "title": "Genres & Societal Changes",
-    "section": "1. Historical Era Genre Profiles (Radar Chart)",
-    "text": "1. Historical Era Genre Profiles (Radar Chart)\nA radar chart comparing musical genres across historical eras. Each polygon represents an era; click legend items to isolate or compare specific periods."
+    "section": "1. Historical Era Genre Profiles (Heatmap Matrix)",
+    "text": "1. Historical Era Genre Profiles (Heatmap Matrix)\nAn interactive heatmap matrix comparing musical genres across historical eras. Unlike a radar chart—where overlapping polygons and circular axes distort the data—this matrix clearly displays each genre’s market share, with color intensity revealing dominant eras at a glance."
   },
   {
     "objectID": "exploration.html#historical-event-impact-market-share-shifts",
