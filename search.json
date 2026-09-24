@@ -56,18 +56,18 @@
     "text": "Historical and societal analysis adapted from Impact of Historical Events on Music (StudyGuides / MUSC 126A Honors: Music in History and Culture), exploring how wars, civil rights movements, revolutions, and digital technology have actively shaped popular music genres throughout history."
   },
   {
-    "objectID": "exploration.html#historical-era-genre-profiles-heatmap-matrix",
-    "href": "exploration.html#historical-era-genre-profiles-heatmap-matrix",
-    "title": "Genres & Societal Changes",
-    "section": "1. Historical Era Genre Profiles (Heatmap Matrix)",
-    "text": "1. Historical Era Genre Profiles (Heatmap Matrix)\nAn interactive heatmap matrix comparing musical genres across historical eras. Unlike a radar chart—where overlapping polygons and circular axes distort the data—this matrix clearly displays each genre’s market share, with color intensity revealing dominant eras at a glance."
-  },
-  {
     "objectID": "exploration.html#historical-event-impact-market-share-shifts",
     "href": "exploration.html#historical-event-impact-market-share-shifts",
     "title": "Genres & Societal Changes",
-    "section": "2. Historical Event Impact: Market Share Shifts",
-    "text": "2. Historical Event Impact: Market Share Shifts\nMeasuring the net percentage-point shift in genre market shares immediately following major historical events (comparing the 2-year post-event window to the 2-year pre-event baseline). Bars extending right show market share gains; bars extending left show declines."
+    "section": "1. Historical Event Impact: Market Share Shifts",
+    "text": "1. Historical Event Impact: Market Share Shifts\nMeasuring the net percentage-point shift in genre market shares immediately following major historical events (comparing the 2-year post-event window to the 2-year pre-event baseline). Bars extending right show market share gains; bars extending left show declines."
+  },
+  {
+    "objectID": "exploration.html#historical-era-genre-profiles-heatmap-matrix",
+    "href": "exploration.html#historical-era-genre-profiles-heatmap-matrix",
+    "title": "Genres & Societal Changes",
+    "section": "2. Historical Era Genre Profiles (Heatmap Matrix)",
+    "text": "2. Historical Era Genre Profiles (Heatmap Matrix)\nAn interactive heatmap matrix comparing musical genres across historical eras. Unlike a radar chart—where overlapping polygons and circular axes distort the data—this matrix clearly displays each genre’s market share, with color intensity revealing dominant eras at a glance."
   },
   {
     "objectID": "exploration.html#individual-genre-trajectories-historical-milestones-1958-2024",
