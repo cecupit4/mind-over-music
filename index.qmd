@@ -66,9 +66,14 @@ p_all_songs <- ggplot(billboard_history, aes(
     panel.grid.minor = element_blank()
   )
 
-ggplotly(p_all_songs, height = 550, tooltip = "text") |> 
-  layout(autosize = TRUE) |> 
-  config(responsive = TRUE)
+ggplotly(p_all_songs, height = 520, tooltip = "text") |> 
+  layout(
+    autosize = TRUE,
+    dragmode = FALSE,
+    xaxis = list(fixedrange = TRUE),
+    yaxis = list(fixedrange = TRUE)
+  ) |> 
+  config(responsive = TRUE, scrollZoom = FALSE, displayModeBar = FALSE)
 ```
 
 ## Billboard Greatest of All Time: Genre Breakdown
@@ -160,13 +165,16 @@ annot_list <- lapply(seq_len(nrow(genre_stats)), \(i) {
   )
 })
 
-ggplotly(p_all_time, height = 540, tooltip = "text") |> 
+ggplotly(p_all_time, height = 500, tooltip = "text") |> 
   layout(
     autosize = TRUE,
+    dragmode = FALSE,
+    xaxis = list(fixedrange = TRUE),
+    yaxis = list(fixedrange = TRUE),
     images = img_list, 
     annotations = annot_list
   ) |> 
-  config(responsive = TRUE)
+  config(responsive = TRUE, scrollZoom = FALSE, displayModeBar = FALSE)
 ```
 
 ## Genre Evolution: Annual Billboard Top 100 (1958 – 2024)
@@ -232,7 +240,12 @@ p <- ggplot(genre_summary, aes(
     panel.grid.minor = element_blank()
   )
 
-ggplotly(p, height = 550, tooltip = "text") |> 
-  layout(autosize = TRUE) |> 
-  config(responsive = TRUE)
+ggplotly(p, height = 500, tooltip = "text") |> 
+  layout(
+    autosize = TRUE,
+    dragmode = FALSE,
+    xaxis = list(fixedrange = TRUE),
+    yaxis = list(fixedrange = TRUE)
+  ) |> 
+  config(responsive = TRUE, scrollZoom = FALSE, displayModeBar = FALSE)
 ```
