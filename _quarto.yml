@@ -1,9 +1,12 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - exploration.html
+    - story.html
 
 website:
-  title: "Mind For Music"
+  title: "Mind Over Music"
   description: "A visual history of Billboard Hot 100 genres."
   navbar:
     background: "#111827"
@@ -11,11 +14,16 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: exploration.html
+        text: Music through Change
+      - href: story.html
+        text: Music Mapped
       - href: project.qmd
         text: Explore the data
   page-footer:
-    left: "Mind For Music"
+    left: "Mind Over Music"
     right: "Built with Quarto"
+
 
 format:
   html:

@@ -1,5 +1,6 @@
 ---
-title: "Final Project Milestone 3"
+title: "Explore the Data"
+subtitle: "Billboard Hot 100 historical records and project overview"
 format:
   html:
     theme: cosmo
@@ -9,13 +10,15 @@ execute:
   echo: false
 ---
 
-# Final Project Milestone 3
 
 ::: {.callout-note icon=false}
 ### Project Plan
 
 I am planning to compare the top genres in songs from the Billboard Top 100 from the beginning and median years of each decade since the Billboard Top 100 has started. I am also going to find different impactful events from these years or surrounding years and see the impact on the popular genres during that time.
 :::
+
+Below is the complete song-level dataset used in this project. You can sort, filter, or search for any artist, song, or genre across the tables below.
+
 
 ```{r}
 #| message: false

@@ -1,13 +1,14 @@
 ---
-title: "Mind For Music"
-subtitle: "How popular music changes over time"
+title: "What does music say about the world?"
+subtitle: "A visual history of Billboard Hot 100 genres and hits (1958–2024)"
 page-layout: full
 toc: false
 execute:
   echo: false
 ---
 
-An analysis of how musical genres have evolved across the Billboard Hot 100, comparing all-time chart toppers against every year from 1958 to 2024. You can inspect the complete song-level data on the [Explore the data](project.qmd) page.
+Popular music offers a lens into cultural moments, social shifts, and technological revolutions. By tracking which genres dominated the Billboard charts over seven decades, we can see how American musical tastes have transformed over time.
+
 
 ## Billboard Greatest of All Time: Genre Breakdown
 
