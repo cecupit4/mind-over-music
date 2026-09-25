@@ -1,0 +1,194 @@
+---
+title: "Anatomy of a Hit"
+subtitle: "Interactive exploration of song length, danceability, tempo, and acousticness across 5,800+ Billboard hits."
+format:
+  html:
+    toc: true
+    page-layout: article
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(plotly)
+library(reactable)
+
+songs <- read_csv("data/billboard_audio_features.csv", show_col_types = FALSE)
+
+genre_colors <- c(
+  "Rock" = "#ef4444",
+  "Pop" = "#ec4899",
+  "Hip-Hop/Rap" = "#2563eb",
+  "R&B/Soul" = "#8b5cf6",
+  "Country" = "#f59e0b",
+  "Electronic/Dance" = "#06b6d4"
+)
+```
+
+## The Shrinking Song: Duration Across Decades
+
+Why are modern songs getting shorter? In the 1960s, 7-inch vinyl records limited songs to under 3 minutes. The CD revolution in the 1980s and 1990s unlocked epic 5-minute anthems. But since 2015, streaming royalty models (which pay per play once a listener passes 30 seconds) and short-form video on TikTok have pushed hit songs back down to historic lows.
+
+```{r}
+#| label: song-duration-chart
+#| fig-height: 5.5
+
+duration_trend <- songs |> 
+  group_by(Year) |> 
+  summarize(
+    Avg_Duration = round(mean(duration_min, na.rm = TRUE), 2),
+    Median_Duration = round(median(duration_min, na.rm = TRUE), 2),
+    Shortest_Song = Song[which.min(duration_min)],
+    Shortest_Artist = Artist[which.min(duration_min)],
+    Shortest_Min = round(min(duration_min), 2),
+    Longest_Song = Song[which.max(duration_min)],
+    Longest_Artist = Artist[which.max(duration_min)],
+    Longest_Min = round(max(duration_min), 2),
+    Count = n()
+  ) |> 
+  mutate(
+    Tooltip = paste0(
+      "<b>Year:</b> ", Year, "<br>",
+      "<b>Avg Duration:</b> ", Avg_Duration, " min<br>",
+      "<b>Median Duration:</b> ", Median_Duration, " min<br>",
+      "<b>Longest Hit:</b> ", Longest_Song, " (", Longest_Min, " min)<br>",
+      "<b>Shortest Hit:</b> ", Shortest_Song, " (", Shortest_Min, " min)"
+    )
+  )
+
+p_duration <- ggplot(duration_trend, aes(x = Year, y = Avg_Duration)) +
+  geom_area(fill = "#10b981", alpha = 0.15) +
+  geom_line(color = "#059669", linewidth = 1.1) +
+  geom_point(aes(text = Tooltip), color = "#047857", size = 2) +
+  scale_y_continuous(breaks = seq(2.0, 5.0, by = 0.5), limits = c(2.2, 4.8)) +
+  scale_x_continuous(breaks = seq(1960, 2020, by = 10)) +
+  labs(
+    x = "Year",
+    y = "Average Song Duration (Minutes)"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    axis.text = element_text(color = "#1e293b"),
+    panel.grid.minor = element_blank()
+  )
+
+ggplotly(p_duration, height = 480, tooltip = "text") |> 
+  layout(
+    autosize = TRUE,
+    dragmode = FALSE,
+    xaxis = list(fixedrange = TRUE),
+    yaxis = list(fixedrange = TRUE)
+  ) |> 
+  config(responsive = TRUE, scrollZoom = FALSE, displayModeBar = FALSE)
+```
+
+## The Rise of Danceability
+
+Spotify’s **danceability** metric scores how suitable a track is for dancing based on tempo, rhythm stability, beat strength, and overall regularity. As drum machines, club synthesizers, and hip-hop 808s took over top-40 radio, the danceability of Billboard hits increased by over 25%.
+
+```{r}
+#| label: danceability-chart
+#| fig-height: 5.5
+
+dance_trend <- songs |> 
+  group_by(Year, Genre) |> 
+  summarize(
+    Avg_Dance = round(mean(danceability, na.rm = TRUE), 3),
+    Count = n(),
+    .groups = "drop"
+  ) |> 
+  filter(Count >= 3) |> 
+  mutate(
+    Tooltip = paste0(
+      "<b>Year:</b> ", Year, "<br>",
+      "<b>Genre:</b> ", Genre, "<br>",
+      "<b>Avg Danceability:</b> ", round(Avg_Dance * 100, 1), "%<br>",
+      "<b>Hits in Year:</b> ", Count
+    )
+  )
+
+p_dance <- ggplot(dance_trend, aes(x = Year, y = Avg_Dance, color = Genre)) +
+  geom_line(linewidth = 0.9, alpha = 0.85) +
+  geom_point(aes(text = Tooltip), size = 1.8) +
+  scale_color_manual(values = genre_colors) +
+  scale_y_continuous(labels = scales::percent_format(scale = 100), limits = c(0.4, 0.85)) +
+  scale_x_continuous(breaks = seq(1960, 2020, by = 10)) +
+  labs(
+    x = "Year",
+    y = "Danceability (%)",
+    color = "Genre"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    axis.text = element_text(color = "#1e293b"),
+    panel.grid.minor = element_blank()
+  )
+
+ggplotly(p_dance, height = 480, tooltip = "text") |> 
+  layout(
+    autosize = TRUE,
+    dragmode = FALSE,
+    xaxis = list(fixedrange = TRUE),
+    yaxis = list(fixedrange = TRUE)
+  ) |> 
+  config(responsive = TRUE, scrollZoom = FALSE, displayModeBar = FALSE)
+```
+
+## Song Audio Profile Explorer
+
+Search, sort, and inspect audio attributes for any hit song in the catalog. Filter by genre, BPM, or danceability score:
+
+```{r}
+#| label: audio-table
+
+songs_table <- songs |> 
+  select(
+    Year,
+    Song,
+    Artist,
+    Genre,
+    Duration = duration_min,
+    BPM = tempo,
+    Dance = danceability,
+    Energy = energy,
+    Mood = valence
+  ) |> 
+  mutate(
+    Dance = paste0(round(Dance * 100, 0), "%"),
+    Energy = paste0(round(Energy * 100, 0), "%"),
+    Mood = paste0(round(Mood * 100, 0), "%"),
+    Duration = paste0(Duration, " min")
+  )
+
+reactable(
+  songs_table,
+  filterable = TRUE,
+  searchable = TRUE,
+  defaultPageSize = 10,
+  striped = TRUE,
+  highlight = TRUE,
+  bordered = TRUE,
+  columns = list(
+    Year = colDef(width = 75, align = "center"),
+    Song = colDef(minWidth = 160, style = list(fontWeight = "bold")),
+    Artist = colDef(minWidth = 150),
+    Genre = colDef(width = 130),
+    Duration = colDef(width = 100, align = "right"),
+    BPM = colDef(width = 80, align = "right"),
+    Dance = colDef(width = 85, align = "right"),
+    Energy = colDef(width = 85, align = "right"),
+    Mood = colDef(width = 85, align = "right")
+  ),
+  theme = reactableTheme(
+    borderColor = "#e2e8f0",
+    stripedColor = "#f8fafc",
+    highlightColor = "#eff6ff",
+    cellPadding = "8px 12px",
+    style = list(fontFamily = "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif", fontSize = "0.88rem")
+  )
+)
+```

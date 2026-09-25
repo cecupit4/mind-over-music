@@ -18,6 +18,10 @@ website:
         text: Music through Change
       - href: story.html
         text: Music Mapped
+      - href: sentiment_story.qmd
+        text: Emotional Arc
+      - href: audio_exploration.qmd
+        text: Anatomy of a Hit
       - href: project.qmd
         text: Explore the data
   page-footer:
