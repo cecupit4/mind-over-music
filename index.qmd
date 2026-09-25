@@ -9,6 +9,67 @@ execute:
 
 Popular music offers a lens into cultural moments, social shifts, and technological revolutions. By tracking which genres dominated the Billboard charts over seven decades, we can see how American musical tastes have transformed over time.
 
+```{r setup}
+#| message: false
+library(tidyverse)
+library(plotly)
+
+billboard_all_time <- read_csv("data/billboard_all_time_top_100.csv")
+billboard_history <- read_csv("data/billboard_historical_genres.csv")
+
+genre_colors <- c(
+  "Rock" = "#ef4444",
+  "Pop" = "#ec4899",
+  "R&B/Soul" = "#8b5cf6",
+  "Hip-Hop/Rap" = "#2563eb",
+  "Country" = "#f59e0b",
+  "Electronic/Dance" = "#06b6d4"
+)
+```
+
+## Every Single Hit Song (1958 – 2024)
+
+Explore all 6,700 year-end hits across chart history. Hover over any point to see the song title, artist, year-end rank, and peak chart position.
+
+```{r}
+#| message: false
+#| out-width: "100%"
+#| fig-height: 7
+
+p_all_songs <- ggplot(billboard_history, aes(
+  x = Year,
+  y = Year_Rank,
+  color = Genre,
+  text = paste0(
+    "<b>", Song, "</b><br>",
+    "Artist: ", Artist, "<br>",
+    "Year: ", Year, " (Rank #", Year_Rank, ")<br>",
+    "Peak: #", Peak, "<br>",
+    "Weeks Charted: ", Weeks, "<br>",
+    "Genre: ", Genre
+  )
+)) +
+  geom_point(alpha = 0.65, size = 1.2) +
+  # Reverse y-axis so rank #1 is at the top
+  scale_y_reverse(breaks = c(1, 25, 50, 75, 100), limits = c(101, 0)) +
+  scale_x_continuous(breaks = seq(1960, 2020, by = 5)) +
+  scale_color_manual(values = genre_colors) +
+  labs(
+    title = NULL,
+    x = "Year",
+    y = "Year-End Rank (1 = Top Hit)",
+    color = "Genre"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    axis.text = element_text(color = "#1e293b"),
+    panel.grid.minor = element_blank()
+  )
+
+ggplotly(p_all_songs, height = 550, tooltip = "text") |> 
+  layout(autosize = TRUE) |> 
+  config(responsive = TRUE)
+```
 
 ## Billboard Greatest of All Time: Genre Breakdown
 
@@ -16,11 +77,6 @@ Popular music offers a lens into cultural moments, social shifts, and technologi
 #| message: false
 #| out-width: "100%"
 #| fig-height: 7
-library(tidyverse)
-library(plotly)
-
-billboard_all_time <- read_csv("data/billboard_all_time_top_100.csv")
-billboard_history <- read_csv("data/billboard_historical_genres.csv")
 
 genre_stats <- billboard_all_time |> 
   group_by(Genre) |> 
@@ -152,15 +208,6 @@ genre_summary <- billboard_history |>
   ) |> 
   ungroup()
 
-genre_colors <- c(
-  "Rock" = "#ef4444",
-  "Pop" = "#ec4899",
-  "R&B/Soul" = "#8b5cf6",
-  "Hip-Hop/Rap" = "#2563eb",
-  "Country" = "#f59e0b",
-  "Electronic/Dance" = "#06b6d4"
-)
-
 p <- ggplot(genre_summary, aes(
   x = Year,
   y = Percent,
@@ -189,49 +236,3 @@ ggplotly(p, height = 550, tooltip = "text") |>
   layout(autosize = TRUE) |> 
   config(responsive = TRUE)
 ```
-
-## Every Single Hit Song (1958 – 2024)
-
-An interactive chart displaying all 6,700 songs to reach the annual Billboard Top 100. Hover over any point to explore the song title, artist, rank, weeks on chart, and genre.
-
-```{r}
-#| message: false
-#| out-width: "100%"
-#| fig-height: 7
-
-p_all_songs <- ggplot(billboard_history, aes(
-  x = Year,
-  y = Year_Rank,
-  color = Genre,
-  text = paste0(
-    "<b>", Song, "</b><br>",
-    "Artist: ", Artist, "<br>",
-    "Year: ", Year, " (Rank #", Year_Rank, ")<br>",
-    "Peak: #", Peak, "<br>",
-    "Weeks Charted: ", Weeks, "<br>",
-    "Genre: ", Genre
-  )
-)) +
-  geom_point(alpha = 0.65, size = 1.2) +
-  # Reverse y-axis so rank #1 is at the top
-  scale_y_reverse(breaks = c(1, 25, 50, 75, 100), limits = c(101, 0)) +
-  scale_x_continuous(breaks = seq(1960, 2020, by = 5)) +
-  scale_color_manual(values = genre_colors) +
-  labs(
-    title = NULL,
-    x = "Year",
-    y = "Year-End Rank (1 = Top Hit)",
-    color = "Genre"
-  ) +
-  theme_minimal(base_size = 12) +
-  theme(
-    axis.text = element_text(color = "#1e293b"),
-    panel.grid.minor = element_blank()
-  )
-
-ggplotly(p_all_songs, height = 550, tooltip = "text") |> 
-  layout(autosize = TRUE) |> 
-  config(responsive = TRUE)
-```
-
-
