@@ -79,21 +79,21 @@
   {
     "objectID": "project.html",
     "href": "project.html",
-    "title": "Explore the Data",
+    "title": "About",
     "section": "",
-    "text": "NoteProject Plan\n\n\n\nI am planning to compare the top genres in songs from the Billboard Top 100 from the beginning and median years of each decade since the Billboard Top 100 has started. I am also going to find different impactful events from these years or surrounding years and see the impact on the popular genres during that time.\nBelow is the complete song-level dataset used in this project. You can sort, filter, or search for any artist, song, or genre across the tables below."
+    "text": "Celise Cupit\nEmail: c.cupit30@ncf.edu\nAccount Name: cecupit4\nRepo URL: https://github.com/ccupit4/mind-over-music\nBelow is the complete song-level dataset used in this project. You can sort, filter, or search for any artist, song, or genre across the tables below."
   },
   {
     "objectID": "project.html#billboard-greatest-of-all-time-hot-100-songs",
     "href": "project.html#billboard-greatest-of-all-time-hot-100-songs",
-    "title": "Explore the Data",
+    "title": "About",
     "section": "Billboard Greatest of All Time Hot 100 Songs",
     "text": "Billboard Greatest of All Time Hot 100 Songs\n\n\n\n\n\nBillboard Greatest of All Time Hot 100\nOfficial ranking and chart statistics of the top songs in Billboard history"
   },
   {
     "objectID": "project.html#billboard-hot-100-every-year-1958-2024",
     "href": "project.html#billboard-hot-100-every-year-1958-2024",
-    "title": "Explore the Data",
+    "title": "About",
     "section": "Billboard Hot 100: Every Year (1958 – 2024)",
     "text": "Billboard Hot 100: Every Year (1958 – 2024)\n\n\n\n\n\nBillboard Top 100 Annual Hits (1958 – 2024)\nTop 100 songs from every year of the Billboard Hot 100 chart history"
   }
