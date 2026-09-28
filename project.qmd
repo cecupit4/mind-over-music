@@ -1,5 +1,5 @@
 ---
-title: "Explore the Data"
+title: "About"
 subtitle: "Billboard Hot 100 historical records and project overview"
 format:
   html:
@@ -9,6 +9,14 @@ format:
 execute:
   echo: false
 ---
+
+Celise Cupit  
+Email: c.cupit30@ncf.edu  
+Account Name: cecupit4  
+Repo URL: [https://github.com/ccupit4/mind-over-music](https://github.com/ccupit4/mind-over-music)  
+School: [https://www.ncf.edu/](https://www.ncf.edu/)  
+Github Account: [https://github.com/cecupit4](https://github.com/cecupit4)
+
 
 
 ::: {.callout-note icon=false}

@@ -23,7 +23,7 @@ website:
       - href: audio_exploration.qmd
         text: Anatomy of a Hit
       - href: project.qmd
-        text: Explore the data
+        text: About
   page-footer:
     left: "Mind Over Music"
     right: "Built with Quarto"
