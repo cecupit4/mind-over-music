@@ -53,14 +53,14 @@
     "href": "audio_exploration.html",
     "title": "Anatomy of a Hit",
     "section": "",
-    "text": "Why are modern songs getting shorter? In the 1960s, 7-inch vinyl records limited songs to under 3 minutes. The CD revolution in the 1980s and 1990s unlocked epic 5-minute anthems. But since 2015, streaming royalty models (which pay per play once a listener passes 30 seconds) and short-form video on TikTok have pushed hit songs back down to historic lows."
+    "text": "Why are modern songs getting shorter? In the 1960s, 7-inch vinyl records limited songs to under 3 minutes. The CD revolution in the 1980s and 1990s unlocked epic 5-minute anthems. But since 2015, streaming royalty models and short-form video have pushed hit songs down to historic lows. Crucially, streaming research shows that people typically decide whether to skip a song within the first 30 seconds (0.5 minutes)—the exact cutoff needed to earn a royalty."
   },
   {
     "objectID": "audio_exploration.html#the-shrinking-song-duration-across-decades",
     "href": "audio_exploration.html#the-shrinking-song-duration-across-decades",
     "title": "Anatomy of a Hit",
     "section": "",
-    "text": "Why are modern songs getting shorter? In the 1960s, 7-inch vinyl records limited songs to under 3 minutes. The CD revolution in the 1980s and 1990s unlocked epic 5-minute anthems. But since 2015, streaming royalty models (which pay per play once a listener passes 30 seconds) and short-form video on TikTok have pushed hit songs back down to historic lows."
+    "text": "Why are modern songs getting shorter? In the 1960s, 7-inch vinyl records limited songs to under 3 minutes. The CD revolution in the 1980s and 1990s unlocked epic 5-minute anthems. But since 2015, streaming royalty models and short-form video have pushed hit songs down to historic lows. Crucially, streaming research shows that people typically decide whether to skip a song within the first 30 seconds (0.5 minutes)—the exact cutoff needed to earn a royalty."
   },
   {
     "objectID": "audio_exploration.html#the-rise-of-danceability",
@@ -74,7 +74,7 @@
     "href": "audio_exploration.html#song-audio-profile-explorer",
     "title": "Anatomy of a Hit",
     "section": "Song Audio Profile Explorer",
-    "text": "Song Audio Profile Explorer\nExplore the relationship between tempo (BPM) and danceability across top Billboard hits. Click or double-click any genre in the legend to filter and compare genres interactively:\n\n\n\n\n\n\n\nFull Catalog Search\nSearch, sort, and inspect audio attributes for any hit song in the catalog:"
+    "text": "Song Audio Profile Explorer\nExplore the relationship between tempo (BPM) and danceability across top Billboard hits. Use the interactive filters below to narrow by genre or slide across decades, and click or double-click any genre in the legend to isolate styles:\n\n\n\n\n\n\nFilter by Genre:\n\n\n\n\n\n\nFilter by Year Range:"
   },
   {
     "objectID": "project.html",
