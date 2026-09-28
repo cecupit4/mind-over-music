@@ -53,3 +53,36 @@ h2 {
   border-radius: 8px;
   overflow: hidden;
 }
+
+/* Quarto panel-tabset button styling */
+.panel-tabset .nav-tabs {
+  border-bottom: none;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.panel-tabset .nav-tabs .nav-link {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #475569;
+  background-color: #f1f5f9;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.panel-tabset .nav-tabs .nav-link:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.panel-tabset .nav-tabs .nav-link.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.3);
+}
+
