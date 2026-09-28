@@ -74,7 +74,7 @@
     "href": "audio_exploration.html#song-audio-profile-explorer",
     "title": "Anatomy of a Hit",
     "section": "Song Audio Profile Explorer",
-    "text": "Song Audio Profile Explorer\nSearch, sort, and inspect audio attributes for any hit song in the catalog. Filter by genre, BPM, or danceability score:"
+    "text": "Song Audio Profile Explorer\nExplore the relationship between tempo (BPM) and danceability across top Billboard hits. Click or double-click any genre in the legend to filter and compare genres interactively:\n\n\n\n\n\n\n\nFull Catalog Search\nSearch, sort, and inspect audio attributes for any hit song in the catalog:"
   },
   {
     "objectID": "project.html",
