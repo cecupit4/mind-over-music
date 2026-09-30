@@ -1,88 +1,157 @@
-/* Professional, modern styling for Mind Over Music */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #1e293b;
-  line-height: 1.6;
+/* Executive & Business Styling for Mind Over Music */
+:root {
+  --navy-primary: #0f172a;
+  --navy-secondary: #1e293b;
+  --text-muted: #64748b;
+  --border-light: #e2e8f0;
+  --surface-card: #ffffff;
+  --bg-page: #f8fafc;
 }
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--navy-secondary);
+  background-color: var(--bg-page);
+  line-height: 1.65;
+}
+
+/* Header & Title Styling */
 h1.title {
   font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.025em;
+  color: var(--navy-primary);
+  letter-spacing: -0.03em;
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color: #64748b;
-  margin-bottom: 1.5rem;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 2rem;
 }
 
 h2 {
   font-weight: 700;
-  color: #0f172a;
+  color: var(--navy-primary);
   letter-spacing: -0.02em;
-  margin-top: 2.5rem;
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.35rem;
-  border-bottom: 1px solid #e2e8f0;
+  font-size: 1.45rem;
+  margin-top: 2.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-light);
 }
 
+/* Executive KPI Metric Cards */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 1.75rem 0 2.5rem 0;
+}
+
+.kpi-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+  border-top: 3px solid #3b82f6;
+}
+
+.kpi-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.kpi-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--navy-primary);
+  line-height: 1.2;
+}
+
+.kpi-subtext {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* Navigation & Footer */
 .navbar {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar-brand {
   font-weight: 700;
   letter-spacing: -0.01em;
+  font-size: 1.1rem;
 }
 
-.html-widget {
+footer.footer {
+  border-top: 1px solid var(--border-light);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 1.5rem 0;
+}
+
+/* Chart & Content Cards */
+.chart-container, .html-widget {
+  background: var(--surface-card);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.25rem;
 }
 
+/* Callouts and Tables */
 .callout {
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   border-left-width: 4px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  background-color: var(--surface-card);
 }
 
 .gt_table {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   border-radius: 8px;
-  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 }
 
-/* Quarto panel-tabset button styling */
-.panel-tabset .nav-tabs {
-  border-bottom: none;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+/* Author & Organization Profile Card */
+.profile-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 }
 
-.panel-tabset .nav-tabs .nav-link {
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  padding: 0.5rem 1.2rem;
-  font-weight: 600;
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 0.75rem;
+}
+
+.profile-item-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.profile-item-value {
   font-size: 0.95rem;
-  color: #475569;
-  background-color: #f1f5f9;
-  cursor: pointer;
-  transition: all 0.15s ease-in-out;
+  font-weight: 500;
+  color: var(--navy-primary);
+  margin-top: 0.2rem;
 }
-
-.panel-tabset .nav-tabs .nav-link:hover {
-  background-color: #e2e8f0;
-  color: #0f172a;
-}
-
-.panel-tabset .nav-tabs .nav-link.active {
-  background-color: #2563eb;
-  color: #ffffff;
-  border-color: #2563eb;
-  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.3);
-}
-
