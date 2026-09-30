@@ -155,3 +155,36 @@ footer.footer {
   color: var(--navy-primary);
   margin-top: 0.2rem;
 }
+
+/* Tabset Toggle Buttons */
+.panel-tabset .nav-tabs {
+  border-bottom: 2px solid var(--border-light);
+  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+}
+
+.panel-tabset .nav-link {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  border-bottom: 3px solid transparent;
+  padding: 0.65rem 1.25rem;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  transition: all 0.15s ease-in-out;
+}
+
+.panel-tabset .nav-link:hover {
+  color: var(--navy-primary);
+  border-bottom-color: #cbd5e1;
+}
+
+.panel-tabset .nav-link.active {
+  color: #2563eb;
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-light);
+  border-bottom: 3px solid #2563eb;
+  box-shadow: 0 -1px 2px rgba(15, 23, 42, 0.04);
+}
+
