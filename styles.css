@@ -100,7 +100,7 @@ footer.footer {
 }
 
 /* Chart & Content Cards */
-.chart-container, .html-widget {
+.chart-container {
   background: var(--surface-card);
   border: 1px solid var(--border-light);
   border-radius: 8px;
@@ -108,6 +108,37 @@ footer.footer {
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
   margin-top: 1rem;
   margin-bottom: 2.25rem;
+}
+
+.html-widget {
+  background: var(--surface-card);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  margin-top: 1rem;
+  margin-bottom: 2.25rem;
+  overflow: hidden !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.js-plotly-plot, 
+.plot-container,
+.svg-container,
+.cell-output-display,
+.tab-pane,
+.tab-content {
+  overflow: hidden !important;
+  max-width: 100% !important;
+}
+
+.js-plotly-plot,
+.js-plotly-plot .plotly,
+.js-plotly-plot .plotly .draglayer,
+.js-plotly-plot .plotly .svg-container,
+.js-plotly-plot .plotly .main-svg {
+  touch-action: pan-y !important;
+  overscroll-behavior: auto !important;
 }
 
 /* Callouts and Tables */
