@@ -16,6 +16,7 @@ execute:
 library(tidyverse)
 library(plotly)
 library(reactable)
+library(htmltools)
 
 songs <- read_csv("data/billboard_audio_features.csv", show_col_types = FALSE)
 
@@ -90,11 +91,67 @@ ggplotly(p_duration, height = 480, tooltip = "text") |>
 
 Spotify’s **danceability** metric scores how suitable a track is for dancing based on tempo, rhythm stability, beat strength, and overall regularity. As drum machines, club synthesizers, and hip-hop 808s took over top-40 radio, the danceability of Billboard hits increased by over 25%.
 
-```{r}
-#| label: danceability-chart
-#| fig-height: 5.5
+::: {.panel-tabset}
 
-dance_trend <- songs |> 
+### Overall Trend
+
+```{r}
+#| label: danceability-overall-chart
+#| fig-height: 5.2
+
+dance_overall <- songs |> 
+  group_by(Year) |> 
+  summarize(
+    Avg_Dance = round(mean(danceability, na.rm = TRUE), 3),
+    Count = n(),
+    Top_Song = Song[which.max(danceability)],
+    Top_Artist = Artist[which.max(danceability)],
+    Top_Score = round(max(danceability, na.rm = TRUE) * 100, 1),
+    .groups = "drop"
+  ) |> 
+  mutate(
+    Tooltip = paste0(
+      "<b>Year:</b> ", Year, "<br>",
+      "<b>Avg Danceability:</b> ", round(Avg_Dance * 100, 1), "%<br>",
+      "<b>Top Dance Track:</b> ", Top_Song, " (", Top_Artist, ", ", Top_Score, "%)<br>",
+      "<b>Hits Analyzed:</b> ", Count
+    )
+  )
+
+p_dance_overall <- ggplot(dance_overall, aes(x = Year, y = Avg_Dance)) +
+  geom_area(fill = "#8b5cf6", alpha = 0.15) +
+  geom_line(color = "#7c3aed", linewidth = 1.1) +
+  geom_point(aes(text = Tooltip), color = "#6d28d9", size = 2) +
+  geom_smooth(method = "loess", color = "#ec4899", linewidth = 0.9, linetype = "dashed", se = FALSE) +
+  scale_y_continuous(labels = scales::percent_format(scale = 100), limits = c(0.45, 0.75)) +
+  scale_x_continuous(breaks = seq(1960, 2020, by = 10)) +
+  labs(
+    x = "Year",
+    y = "Average Danceability (%)"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    axis.text = element_text(color = "#1e293b"),
+    panel.grid.minor = element_blank()
+  )
+
+ggplotly(p_dance_overall, height = 460, tooltip = "text") |> 
+  layout(
+    autosize = TRUE,
+    dragmode = FALSE,
+    xaxis = list(fixedrange = TRUE),
+    yaxis = list(fixedrange = TRUE)
+  ) |> 
+  config(responsive = TRUE, scrollZoom = FALSE, displayModeBar = FALSE)
+```
+
+### Genre Comparison
+
+```{r}
+#| label: danceability-genre-chart
+#| fig-height: 5.2
+
+dance_genre <- songs |> 
   group_by(Year, Genre) |> 
   summarize(
     Avg_Dance = round(mean(danceability, na.rm = TRUE), 3),
@@ -102,20 +159,24 @@ dance_trend <- songs |>
     .groups = "drop"
   ) |> 
   filter(Count >= 3) |> 
+  group_by(Genre) |> 
+  arrange(Year) |> 
   mutate(
+    Smooth_Dance = stats::filter(Avg_Dance, rep(1/3, 3), sides = 2),
+    Smooth_Dance = ifelse(is.na(Smooth_Dance), Avg_Dance, Smooth_Dance),
     Tooltip = paste0(
-      "<b>Year:</b> ", Year, "<br>",
       "<b>Genre:</b> ", Genre, "<br>",
-      "<b>Avg Danceability:</b> ", round(Avg_Dance * 100, 1), "%<br>",
+      "<b>Year:</b> ", Year, "<br>",
+      "<b>Avg Danceability:</b> ", round(Smooth_Dance * 100, 1), "%<br>",
       "<b>Hits in Year:</b> ", Count
     )
-  )
+  ) |> 
+  ungroup()
 
-p_dance <- ggplot(dance_trend, aes(x = Year, y = Avg_Dance, color = Genre)) +
-  geom_line(linewidth = 0.9, alpha = 0.85) +
-  geom_point(aes(text = Tooltip), size = 1.8) +
+p_dance_genre <- ggplot(dance_genre, aes(x = Year, y = Smooth_Dance, color = Genre, group = Genre, text = Tooltip)) +
+  geom_line(linewidth = 1.2, alpha = 0.85) +
   scale_color_manual(values = genre_colors) +
-  scale_y_continuous(labels = scales::percent_format(scale = 100), limits = c(0.4, 0.85)) +
+  scale_y_continuous(labels = scales::percent_format(scale = 100), limits = c(0.45, 0.82)) +
   scale_x_continuous(breaks = seq(1960, 2020, by = 10)) +
   labs(
     x = "Year",
@@ -128,7 +189,7 @@ p_dance <- ggplot(dance_trend, aes(x = Year, y = Avg_Dance, color = Genre)) +
     panel.grid.minor = element_blank()
   )
 
-ggplotly(p_dance, height = 480, tooltip = "text") |> 
+ggplotly(p_dance_genre, height = 460, tooltip = "text") |> 
   layout(
     autosize = TRUE,
     dragmode = FALSE,
@@ -138,9 +199,62 @@ ggplotly(p_dance, height = 480, tooltip = "text") |>
   config(responsive = TRUE, scrollZoom = FALSE, displayModeBar = FALSE)
 ```
 
+:::
+
 ## Song Audio Profile Explorer
 
-Search, sort, and inspect audio attributes for any hit song in the catalog. Filter by genre, BPM, or danceability score:
+Explore, compare, and listen to hits across 67 years of chart history. Filter by genre, search your favorite artist, and inspect visual audio meters for danceability, energy, and mood:
+
+::: {.panel-tabset}
+
+### Interactive Audio Matrix
+
+Hover over any hit to inspect its sonic fingerprint (tempo, danceability, energy, and mood). Use the genre legend to isolate musical styles or zoom into specific tempo ranges:
+
+```{r}
+#| label: audio-scatter-matrix
+#| fig-height: 5.5
+
+p_scatter <- ggplot(songs, aes(
+  x = tempo,
+  y = danceability,
+  color = Genre,
+  size = energy,
+  text = paste0(
+    "<b>", Song, "</b> (", Year, ")<br>",
+    "<b>Artist:</b> ", Artist, "<br>",
+    "<b>Genre:</b> ", Genre, "<br>",
+    "<b>Tempo:</b> ", round(tempo), " BPM<br>",
+    "<b>Danceability:</b> ", round(danceability * 100, 1), "%<br>",
+    "<b>Energy:</b> ", round(energy * 100, 1), "%<br>",
+    "<b>Mood (Valence):</b> ", round(valence * 100, 1), "%"
+  )
+)) +
+  geom_point(alpha = 0.55) +
+  scale_color_manual(values = genre_colors) +
+  scale_y_continuous(labels = scales::percent_format(scale = 100), limits = c(0.2, 1.0)) +
+  scale_x_continuous(limits = c(50, 220), breaks = seq(60, 200, by = 20)) +
+  scale_size_continuous(range = c(1.5, 4.5), guide = "none") +
+  labs(
+    x = "Tempo / BPM (Beats Per Minute)",
+    y = "Danceability (%)",
+    color = "Genre"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    axis.text = element_text(color = "#1e293b"),
+    panel.grid.minor = element_blank()
+  )
+
+ggplotly(p_scatter, height = 480, tooltip = "text") |> 
+  layout(
+    autosize = TRUE,
+    legend = list(orientation = "h", x = 0.5, xanchor = "center", y = 1.1)
+  ) |> 
+  config(responsive = TRUE, scrollZoom = FALSE, displayModeBar = FALSE)
+```
+
+### Searchable Song Vault & Audio Meters
 
 ```{r}
 #| label: audio-table
@@ -158,10 +272,8 @@ songs_table <- songs |>
     Mood = valence
   ) |> 
   mutate(
-    Dance = paste0(round(Dance * 100, 0), "%"),
-    Energy = paste0(round(Energy * 100, 0), "%"),
-    Mood = paste0(round(Mood * 100, 0), "%"),
-    Duration = paste0(Duration, " min")
+    BPM = round(BPM),
+    Duration = paste0(round(Duration, 1), "m")
   )
 
 reactable(
@@ -169,19 +281,80 @@ reactable(
   filterable = TRUE,
   searchable = TRUE,
   defaultPageSize = 10,
+  pageSizeOptions = c(10, 25, 50),
+  showPageSizeOptions = TRUE,
   striped = TRUE,
   highlight = TRUE,
   bordered = TRUE,
   columns = list(
-    Year = colDef(width = 75, align = "center"),
-    Song = colDef(minWidth = 160, style = list(fontWeight = "bold")),
-    Artist = colDef(minWidth = 150),
-    Genre = colDef(width = 130),
-    Duration = colDef(width = 100, align = "right"),
-    BPM = colDef(width = 80, align = "right"),
-    Dance = colDef(width = 85, align = "right"),
-    Energy = colDef(width = 85, align = "right"),
-    Mood = colDef(width = 85, align = "right")
+    Year = colDef(width = 70, align = "center"),
+    Song = colDef(
+      minWidth = 170,
+      cell = JS("function(cellInfo) {
+        var song = cellInfo.value;
+        var artist = cellInfo.row['Artist'];
+        var q = encodeURIComponent(song + ' ' + artist);
+        var url = 'https://www.youtube.com/results?search_query=' + q;
+        return '<div style=\"display:flex;align-items:center;justify-content:space-between;\">' +
+               '<span style=\"font-weight:600;\">' + song + '</span>' +
+               '<a href=\"' + url + '\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"Listen on YouTube\" ' +
+               'style=\"padding:2px 7px;background:#fee2e2;color:#dc2626;border-radius:4px;font-weight:600;font-size:0.75rem;text-decoration:none;margin-left:6px;\">▶</a>' +
+               '</div>';
+      }"),
+      html = TRUE
+    ),
+    Artist = colDef(minWidth = 140),
+    Genre = colDef(
+      width = 135,
+      cell = JS("function(cellInfo) {
+        var colors = {
+          'Rock': '#ef4444',
+          'Pop': '#ec4899',
+          'Hip-Hop/Rap': '#2563eb',
+          'R&B/Soul': '#8b5cf6',
+          'Country': '#f59e0b',
+          'Electronic/Dance': '#06b6d4'
+        };
+        var bg = colors[cellInfo.value] || '#64748b';
+        return '<span style=\"background-color:' + bg + ';color:#ffffff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;\">' + cellInfo.value + '</span>';
+      }"),
+      html = TRUE
+    ),
+    Duration = colDef(width = 75, align = "right"),
+    BPM = colDef(width = 75, align = "right"),
+    Dance = colDef(
+      width = 120,
+      cell = JS("function(cellInfo) {
+        var pct = Math.round(cellInfo.value * 100);
+        return '<div style=\"display:flex;align-items:center;font-family:monospace;font-size:0.82rem;\">' +
+               '<div style=\"flex-grow:1;background:#f1f5f9;height:12px;border-radius:2px;overflow:hidden;margin-right:8px;\">' +
+               '<div style=\"width:' + pct + '%;height:100%;background:#10b981;border-radius:2px;\"></div></div>' +
+               '<span>' + pct + '%</span></div>';
+      }"),
+      html = TRUE
+    ),
+    Energy = colDef(
+      width = 120,
+      cell = JS("function(cellInfo) {
+        var pct = Math.round(cellInfo.value * 100);
+        return '<div style=\"display:flex;align-items:center;font-family:monospace;font-size:0.82rem;\">' +
+               '<div style=\"flex-grow:1;background:#f1f5f9;height:12px;border-radius:2px;overflow:hidden;margin-right:8px;\">' +
+               '<div style=\"width:' + pct + '%;height:100%;background:#f59e0b;border-radius:2px;\"></div></div>' +
+               '<span>' + pct + '%</span></div>';
+      }"),
+      html = TRUE
+    ),
+    Mood = colDef(
+      width = 120,
+      cell = JS("function(cellInfo) {
+        var pct = Math.round(cellInfo.value * 100);
+        return '<div style=\"display:flex;align-items:center;font-family:monospace;font-size:0.82rem;\">' +
+               '<div style=\"flex-grow:1;background:#f1f5f9;height:12px;border-radius:2px;overflow:hidden;margin-right:8px;\">' +
+               '<div style=\"width:' + pct + '%;height:100%;background:#3b82f6;border-radius:2px;\"></div></div>' +
+               '<span>' + pct + '%</span></div>';
+      }"),
+      html = TRUE
+    )
   ),
   theme = reactableTheme(
     borderColor = "#e2e8f0",
@@ -192,3 +365,5 @@ reactable(
   )
 )
 ```
+
+:::

@@ -4,6 +4,7 @@ project:
   resources:
     - exploration.html
     - story.html
+    - images/
 
 website:
   title: "Mind Over Music"
@@ -24,9 +25,14 @@ website:
         text: Anatomy of a Hit
       - href: project.qmd
         text: About
+    right:
+      - icon: github
+        href: https://github.com/cecupit4/mind-over-music
+        aria-label: GitHub
+    search: true
   page-footer:
-    left: "Mind Over Music"
-    right: "Built with Quarto"
+    left: "Mind Over Music | Billboard Hot 100 Historical Intelligence"
+    right: "Built with Quarto & R"
 
 
 format:

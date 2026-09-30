@@ -1,31 +1,62 @@
 ---
-title: "About"
-subtitle: "Billboard Hot 100 historical records and project overview"
+title: "Project Overview & Methodology"
+subtitle: "Data provenance, analytical methodology, and complete Billboard Hot 100 historical records"
 format:
   html:
-    theme: cosmo
     page-layout: full
     toc: false
 execute:
   echo: false
 ---
 
-Celise Cupit  
-Email: c.cupit30@ncf.edu  
-Account Name: cecupit4  
-Repo URL: [https://github.com/ccupit4/mind-over-music](https://github.com/ccupit4/mind-over-music)  
-School: [https://www.ncf.edu/](https://www.ncf.edu/)  
-Github Account: [https://github.com/cecupit4](https://github.com/cecupit4)
+::: {.profile-card}
+### Research Lead & Affiliation
 
-
-
-::: {.callout-note icon=false}
-### Project Plan
-
-I am planning to compare the top genres in songs from the Billboard Top 100 from the beginning and median years of each decade since the Billboard Top 100 has started. I am also going to find different impactful events from these years or surrounding years and see the impact on the popular genres during that time.
+::: {.profile-grid}
+::: {.profile-item}
+::: {.profile-item-label}
+Principal Investigator
+:::
+::: {.profile-item-value}
+Celise Cupit
+:::
 :::
 
-Below is the complete song-level dataset used in this project. You can sort, filter, or search for any artist, song, or genre across the tables below.
+::: {.profile-item}
+::: {.profile-item-label}
+Academic Institution
+:::
+::: {.profile-item-value}
+[New College of Florida](https://www.ncf.edu/)
+:::
+:::
+
+::: {.profile-item}
+::: {.profile-item-label}
+Contact Email
+:::
+::: {.profile-item-value}
+[c.cupit30@ncf.edu](mailto:c.cupit30@ncf.edu)
+:::
+:::
+
+::: {.profile-item}
+::: {.profile-item-label}
+Project Repository
+:::
+::: {.profile-item-value}
+[github.com/cecupit4/mind-over-music](https://github.com/ccupit4/mind-over-music)
+:::
+:::
+:::
+:::
+
+::: {.callout-note icon=false}
+### Analytical Scope & Objectives
+This research project analyzes longitudinal shifts in musical consumption by evaluating genre share across the Billboard Hot 100 from 1958 to 2024. The study examines benchmark years and pivotal transition eras to quantify how macro-cultural events, recording technology disruptions (vinyl to cassette, CD, digital download, and on-demand streaming), and demographic changes influenced the acoustic and emotional profile of mainstream hits.
+:::
+
+Below is the verified song-level database supporting this analysis. Use the search and pagination controls to filter by artist, genre, release year, or peak chart performance.
 
 
 ```{r}
