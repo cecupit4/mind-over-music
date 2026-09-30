@@ -11,7 +11,19 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--navy-secondary);
-  background: linear-gradient(135deg, #fdf2f8 0%, #fae8ff 25%, #ede9fe 50%, #e0f2fe 75%, #fef3c7 100%);
+  background: linear-gradient(180deg,
+    #6d28d9 0%,       /* Prince: Purple Rain / Donna Summer */
+    #db2777 16%,      /* Disco Magenta / Hot Pink */
+    #d97706 34%,      /* Nas: Illmatic Amber Gold */
+    #ea580c 48%,      /* Vintage Vinyl Terracotta & Chic */
+    #0891b2 66%,      /* Beatles: Abbey Road Sky Cyan */
+    #2563eb 80%,      /* Miles Davis: Kind of Blue / Electric Azure */
+    #059669 92%,      /* Tribe Called Quest: Low End Theory Emerald */
+    #0f172a 100%      /* Dark Side of the Moon / Daft Punk Obsidian */
+  );
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   line-height: 1.65;
   position: relative;
   min-height: 100vh;
@@ -29,7 +41,8 @@ body::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.12;
+  opacity: 0.26;
+  mix-blend-mode: overlay;
   pointer-events: none;
 }
 
