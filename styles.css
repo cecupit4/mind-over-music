@@ -5,13 +5,13 @@
   --text-muted: #64748b;
   --border-light: #e2e8f0;
   --surface-card: #ffffff;
-  --bg-page: #f8fafc;
+  --bg-page: #fdf4ff;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--navy-secondary);
-  background-color: var(--bg-page);
+  background: linear-gradient(135deg, #fdf2f8 0%, #fae8ff 25%, #ede9fe 50%, #e0f2fe 75%, #fef3c7 100%);
   line-height: 1.65;
   position: relative;
   min-height: 100vh;
