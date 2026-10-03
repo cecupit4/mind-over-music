@@ -1,30 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-/* Dynamic Soundwave & Modern Studio Theme for Mind Over Music */
+/* ==========================================================================
+   Mind Over Music - Upbeat & Colorful Music Studio Theme
+   ========================================================================== */
+
 :root {
-  --primary-indigo: #4f46e5;
-  --primary-purple: #7c3aed;
-  --accent-pink: #ec4899;
-  --accent-cyan: #06b6d4;
-  --accent-amber: #f59e0b;
+  /* Vibrant Upbeat Music Palette */
+  --music-pink: #ec4899;
+  --music-rose: #f43f5e;
+  --music-purple: #8b5cf6;
+  --music-indigo: #6366f1;
+  --music-cyan: #06b6d4;
+  --music-amber: #f59e0b;
+  --music-orange: #f97316;
+  --music-emerald: #10b981;
+
+  /* Neutral Slates */
+  --slate-950: #020617;
   --slate-900: #0f172a;
   --slate-800: #1e293b;
   --slate-600: #475569;
   --slate-400: #94a3b8;
-  --surface-card: #ffffff;
-  --border-subtle: #e2e8f0;
-  --card-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.07), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
-  --card-shadow-hover: 0 20px 35px -10px rgba(99, 102, 241, 0.16), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+  --slate-200: #e2e8f0;
+
+  /* Surfaces & Elevation */
+  --surface-card: rgba(255, 255, 255, 0.94);
+  --surface-card-hover: #ffffff;
+  --border-subtle: rgba(226, 232, 240, 0.9);
+  
+  /* Upbeat Neon Glows & Shadows */
+  --card-shadow: 0 10px 30px -6px rgba(15, 23, 42, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
+  --card-shadow-hover: 0 20px 38px -8px rgba(139, 92, 246, 0.18), 0 10px 20px -4px rgba(236, 72, 153, 0.14);
+  --neon-glow-pink: 0 0 15px rgba(236, 72, 153, 0.45);
+  --neon-glow-cyan: 0 0 15px rgba(6, 182, 212, 0.45);
 }
 
+/* Custom Scrollbar with Upbeat Music Gradient */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--music-pink), var(--music-purple), var(--music-cyan));
+  border-radius: 9999px;
+  border: 2px solid #f1f5f9;
+}
+
+/* Text Selection Glow */
+::selection {
+  background: var(--music-pink);
+  color: #ffffff;
+}
+
+/* Upbeat Gradient Mesh Background */
 html {
   min-height: 100%;
-  background: linear-gradient(135deg,
-    #f8fafc 0%,       /* crisp slate */
-    #eef2ff 30%,      /* soft electric indigo */
-    #faf5ff 65%,      /* subtle synth violet */
-    #f0fdfa 100%      /* fresh cyan shimmer */
-  );
+  background: 
+    radial-gradient(circle at 10% 12%, rgba(236, 72, 153, 0.09) 0%, transparent 40%),
+    radial-gradient(circle at 92% 18%, rgba(6, 182, 212, 0.10) 0%, transparent 45%),
+    radial-gradient(circle at 50% 65%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.09) 0%, transparent 42%),
+    linear-gradient(135deg, #fdf4f7 0%, #f5f3ff 35%, #f0f9ff 70%, #f0fdf9 100%);
   background-attachment: fixed;
   background-size: cover;
 }
@@ -38,6 +76,7 @@ body {
   min-height: 100vh;
 }
 
+/* Subtle Musical Vinyl Backdrop Overlay */
 body::before {
   content: "";
   position: fixed;
@@ -50,34 +89,36 @@ body::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.05;
+  opacity: 0.055;
   pointer-events: none;
 }
 
-/* Links */
+/* Interactive Links */
 a {
-  color: var(--primary-indigo);
+  color: var(--music-indigo);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.15s ease;
+  transition: all 0.2s ease;
 }
 
 a:hover {
-  color: var(--primary-purple);
-  text-decoration: underline;
+  color: var(--music-pink);
+  text-decoration: none;
+  text-shadow: 0 0 8px rgba(236, 72, 153, 0.25);
 }
 
-/* Header & Title Styling */
+/* Upbeat Colorful Headings */
 h1.title {
   font-family: 'Outfit', sans-serif;
-  font-weight: 800;
-  color: var(--slate-900);
-  letter-spacing: -0.03em;
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #0f172a 0%, #4338ca 100%);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  font-size: 2.75rem;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(135deg, #0f172a 0%, #4338ca 35%, #ec4899 75%, #f59e0b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 3px 12px rgba(236, 72, 153, 0.15));
 }
 
 .subtitle {
@@ -88,16 +129,22 @@ h1.title {
   margin-bottom: 2rem;
 }
 
+/* Section Headings with Dynamic Music Soundwave Underline */
 h2 {
   font-family: 'Outfit', sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--slate-900);
-  letter-spacing: -0.02em;
-  font-size: 1.6rem;
-  margin-top: 2.5rem;
+  letter-spacing: -0.025em;
+  font-size: 1.65rem;
+  margin-top: 2.75rem;
   margin-bottom: 1.25rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--border-subtle);
+  padding-bottom: 0.65rem;
+  position: relative;
+  border-bottom: 2px solid transparent;
+  background-image: linear-gradient(to right, var(--music-pink), var(--music-purple), var(--music-cyan), transparent);
+  background-size: 100% 2.5px;
+  background-position: bottom left;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -107,43 +154,138 @@ h3 {
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
   color: var(--slate-900);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
 }
 
-/* Executive KPI Metric Cards */
+/* Frosted Music Studio Glass Navbar */
+.navbar {
+  background: rgba(15, 23, 42, 0.94) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Animated Flowing Equalizer Soundwave Border */
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, 
+    var(--music-pink) 0%, 
+    var(--music-purple) 25%, 
+    var(--music-cyan) 50%, 
+    var(--music-amber) 75%, 
+    var(--music-pink) 100%
+  );
+  background-size: 200% 100%;
+  animation: soundwave-flow 5s linear infinite;
+  box-shadow: 0 0 12px rgba(236, 72, 153, 0.45);
+}
+
+@keyframes soundwave-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.navbar-brand {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  font-size: 1.35rem !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.55rem !important;
+}
+
+/* Animated Headphones with Upbeat Rhythm Bob */
+.navbar-brand::before {
+  content: "🎧";
+  font-size: 1.35rem;
+  filter: drop-shadow(0 0 8px rgba(236, 72, 153, 0.7));
+  animation: rhythm-bob 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes rhythm-bob {
+  0% { transform: rotate(-5deg) scale(1); }
+  100% { transform: rotate(5deg) scale(1.1); }
+}
+
+.navbar .nav-link {
+  color: #cbd5e1 !important;
+  font-weight: 600;
+  font-size: 0.925rem;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0.5rem 0.9rem !important;
+  border-radius: 8px;
+}
+
+.navbar .nav-link:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.navbar .nav-link.active {
+  color: #ffffff !important;
+  background: rgba(236, 72, 153, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(236, 72, 153, 0.4);
+}
+
+.navbar .nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 20%;
+  right: 20%;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--music-pink), var(--music-cyan));
+  border-radius: 9999px;
+  box-shadow: 0 0 6px var(--music-pink);
+}
+
+footer.footer {
+  border-top: 1px solid var(--border-subtle);
+  color: var(--slate-600);
+  font-size: 0.85rem;
+  padding: 2rem 0;
+  background: transparent;
+}
+
+/* Colorful Music KPI Cards */
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
+  gap: 1.35rem;
   margin: 1.75rem 0 2.5rem 0;
 }
 
 .kpi-card {
   background: var(--surface-card);
+  backdrop-filter: blur(8px);
   border: 1px solid var(--border-subtle);
-  border-radius: 14px;
-  padding: 1.5rem 1.25rem;
+  border-radius: 16px;
+  padding: 1.5rem 1.35rem;
   box-shadow: var(--card-shadow);
-  border-top: 4px solid var(--primary-indigo);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
 }
 
-.kpi-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-indigo), var(--primary-purple), var(--accent-pink));
-}
+/* Dedicated Music Color Accents for Each KPI */
+.kpi-card:nth-child(1) { border-top: 4.5px solid var(--music-pink); }
+.kpi-card:nth-child(2) { border-top: 4.5px solid var(--music-purple); }
+.kpi-card:nth-child(3) { border-top: 4.5px solid var(--music-cyan); }
+.kpi-card:nth-child(4) { border-top: 4.5px solid var(--music-amber); }
 
-.kpi-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--card-shadow-hover);
-}
+.kpi-card:nth-child(1):hover { box-shadow: 0 20px 35px -8px rgba(236, 72, 153, 0.22); transform: translateY(-4px); }
+.kpi-card:nth-child(2):hover { box-shadow: 0 20px 35px -8px rgba(139, 92, 246, 0.22); transform: translateY(-4px); }
+.kpi-card:nth-child(3):hover { box-shadow: 0 20px 35px -8px rgba(6, 182, 212, 0.22); transform: translateY(-4px); }
+.kpi-card:nth-child(4):hover { box-shadow: 0 20px 35px -8px rgba(245, 158, 11, 0.22); transform: translateY(-4px); }
 
 .kpi-label {
   font-size: 0.75rem;
@@ -154,15 +296,35 @@ h3 {
   margin-bottom: 0.35rem;
 }
 
-.kpi-value {
-  font-family: 'Outfit', sans-serif;
-  font-size: 2.15rem;
-  font-weight: 800;
-  color: var(--slate-900);
-  line-height: 1.15;
-  background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 60%, #ec4899 100%);
+.kpi-card:nth-child(1) .kpi-value {
+  background: linear-gradient(135deg, #be185d 0%, var(--music-pink) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.kpi-card:nth-child(2) .kpi-value {
+  background: linear-gradient(135deg, #6d28d9 0%, var(--music-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.kpi-card:nth-child(3) .kpi-value {
+  background: linear-gradient(135deg, #0e7490 0%, var(--music-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.kpi-card:nth-child(4) .kpi-value {
+  background: linear-gradient(135deg, #b45309 0%, var(--music-amber) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.kpi-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.15;
 }
 
 .kpi-subtext {
@@ -172,67 +334,126 @@ h3 {
   font-weight: 500;
 }
 
-/* Navigation & Footer */
-.navbar {
-  background: rgba(15, 23, 42, 0.94) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  position: relative;
-}
-
-.navbar::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #6366f1, #ec4899, #f59e0b, #06b6d4);
-}
-
-.navbar-brand {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  font-size: 1.35rem;
-  color: #ffffff !important;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.navbar-brand::before {
-  content: "⚡";
-  font-size: 1.1rem;
-}
-
-footer.footer {
-  border-top: 1px solid var(--border-subtle);
-  color: var(--slate-600);
-  font-size: 0.85rem;
-  padding: 1.75rem 0;
-  background: transparent;
-}
-
-/* Section Cards & Separated Containers */
+/* Elevated Card Containers with Neon Hover Aura */
 .section-card,
 .chart-container {
   background: var(--surface-card);
+  backdrop-filter: blur(8px);
   border: 1px solid var(--border-subtle);
-  border-radius: 16px;
-  padding: 1.75rem 1.75rem;
+  border-radius: 18px;
+  padding: 1.85rem 1.85rem;
   box-shadow: var(--card-shadow);
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
   margin-bottom: 2.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
 }
 
 .section-card:hover,
 .chart-container:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+/* Modern Stadium-Pill Tabsets (Music Console Style) */
+.panel-tabset .nav-tabs {
+  border-bottom: none;
+  background: rgba(241, 245, 249, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 6px;
+  border-radius: 9999px;
+  display: inline-flex;
+  gap: 6px;
+  margin-bottom: 1.85rem;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.panel-tabset .nav-link {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--slate-600);
+  border: none;
+  padding: 0.55rem 1.4rem;
+  border-radius: 9999px;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.panel-tabset .nav-link:hover {
+  color: var(--slate-900);
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(-1px);
+}
+
+.panel-tabset .nav-link.active {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, var(--music-pink) 0%, var(--music-purple) 50%, var(--music-indigo) 100%) !important;
+  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Callout Blocks (Backstage Pass Vibe) */
+.callout {
+  border-radius: 14px;
+  border-left-width: 6px;
+  border-left-color: var(--music-pink) !important;
+  box-shadow: 0 8px 24px -4px rgba(236, 72, 153, 0.12);
+  background-color: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid #f1f5f9;
+  border-right: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+  margin: 1.75rem 0;
+}
+
+/* Profile Card */
+.profile-card {
+  background: var(--surface-card);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-subtle);
+  border-left: 6px solid var(--music-indigo);
+  border-radius: 16px;
+  padding: 1.85rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--card-shadow);
+  transition: all 0.25s ease;
+}
+
+.profile-card:hover {
   box-shadow: var(--card-shadow-hover);
 }
 
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.35rem;
+  margin-top: 0.85rem;
+}
+
+.profile-item-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--slate-400);
+}
+
+.profile-item-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--slate-900);
+  margin-top: 0.25rem;
+}
+
+.gt_table {
+  font-size: 0.9rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--card-shadow);
+}
+
+/* Robust Plotly Container Isolation */
 .html-widget {
   background: transparent;
   border: none;
@@ -261,91 +482,4 @@ footer.footer {
 .js-plotly-plot .plotly .main-svg {
   touch-action: pan-y !important;
   overscroll-behavior: auto !important;
-}
-
-/* Callouts and Tables */
-.callout {
-  border-radius: 12px;
-  border-left-width: 5px;
-  border-left-color: var(--primary-indigo) !important;
-  box-shadow: var(--card-shadow);
-  background-color: var(--surface-card);
-  border-top: 1px solid var(--border-subtle);
-  border-right: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
-  margin: 1.5rem 0;
-}
-
-.gt_table {
-  font-size: 0.9rem;
-  border-radius: 12px;
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--card-shadow);
-}
-
-/* Author & Organization Profile Card */
-.profile-card {
-  background: var(--surface-card);
-  border: 1px solid var(--border-subtle);
-  border-left: 6px solid var(--primary-indigo);
-  border-radius: 14px;
-  padding: 1.75rem;
-  margin-bottom: 2rem;
-  box-shadow: var(--card-shadow);
-}
-
-.profile-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
-  margin-top: 0.75rem;
-}
-
-.profile-item-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: var(--slate-400);
-}
-
-.profile-item-value {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--slate-900);
-  margin-top: 0.25rem;
-}
-
-/* Modern Pill-Style Tabsets */
-.panel-tabset .nav-tabs {
-  border-bottom: none;
-  background: #f1f5f9;
-  padding: 6px;
-  border-radius: 12px;
-  display: inline-flex;
-  gap: 6px;
-  margin-bottom: 1.75rem;
-  border: 1px solid var(--border-subtle);
-}
-
-.panel-tabset .nav-link {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--slate-600);
-  border: none;
-  padding: 0.55rem 1.35rem;
-  border-radius: 8px;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.panel-tabset .nav-link:hover {
-  color: var(--slate-900);
-  background: rgba(255, 255, 255, 0.6);
-}
-
-.panel-tabset .nav-link.active {
-  color: #ffffff !important;
-  background: linear-gradient(135deg, var(--primary-indigo) 0%, var(--primary-purple) 100%) !important;
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
 }
